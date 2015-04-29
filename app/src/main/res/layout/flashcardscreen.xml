@@ -36,7 +36,7 @@
             android:textStyle="bold|italic" />
 
         <Button
-            android:id="@+id/hideButton"
+            android:id="@+id/flip"
             android:layout_width="181dp"
             android:layout_height="match_parent"
             android:text="Flip to Back"

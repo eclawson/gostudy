@@ -13,7 +13,7 @@ public class flashcard extends Activity implements OnClickListener
 	TextView flashcard;
 //	TextView backcard;
 	Button nextButton;
-	Button hideOrShowButton;
+	Button flipButton;
     Button howtobut;
 
 	public static deck card_Deck;
@@ -48,8 +48,8 @@ public class flashcard extends Activity implements OnClickListener
             }
         });
 
-        hideOrShowButton = (Button)findViewById(R.id.hideButton);
-        hideOrShowButton.setOnClickListener(this);
+        flipButton = (Button)findViewById(R.id.hideButton);
+        flipButton.setOnClickListener(this);
         
     }
     private void helppage(){
@@ -71,20 +71,20 @@ public class flashcard extends Activity implements OnClickListener
     			{
     				flashcard.setText(cardStatus.getFrontCard());
 
-    				hideOrShowButton.setText("Flip to Back");
+    				flipButton.setText("Flip to Back");
     			}
     			break;
-    		case R.id.hideButton: 
+    		case R.id.flip:
     			if(cardStatus != null && flashcard.getText().equals(cardStatus.getFrontCard()))
     			{
     				flashcard.setText(cardStatus.getBackCard());
-    				hideOrShowButton.setText("Flip to Front");
+    				flipButton.setText("Flip to Front");
     			}
     			else if (cardStatus != null )
     			{
 
                     flashcard.setText(cardStatus.getFrontCard());
-    				hideOrShowButton.setText("Flip to Back");
+    				flipButton.setText("Flip to Back");
     			}
     			break;
     	}
