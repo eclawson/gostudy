@@ -9,29 +9,41 @@
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Question" 
-        android:layout_weight="1"/>
+        android:text="Front Of Card"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal|bottom|fill_vertical|top"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        android:textColor="#ff000aff" />
 
 
     <EditText
         android:id="@+id/question_input"
-        android:layout_width="fill_parent"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
         android:layout_height="153dp"
-        android:text=""
         android:background="@drawable/card2"
-        android:layout_weight="1.92" />
+        android:layout_weight="7.01"
+        android:text="test"
+        android:gravity="top"
+        android:paddingTop="15dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Answer"
-        android:layout_weight="1" />
+        android:text="Back of Card"
+        android:layout_weight="1"
+        android:textColor="#ffff0014"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        android:gravity="center_vertical|center_horizontal|fill_vertical" />
 
 
     <EditText
         android:id="@+id/answer_input"
-        android:layout_width="fill_parent"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:text=""
         android:background="@drawable/card2"/>
@@ -46,14 +58,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Card" 
-        	android:layout_weight="10"/>
+        	android:layout_weight="10"
+            android:textSize="30dp"
+            android:textStyle="bold|italic"
+            android:shadowColor="#ffff0008" />
 
         <Button
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
-       		android:layout_weight="1" />
+       		android:layout_weight="1"
+            android:textStyle="bold|italic"
+            android:textSize="30dp" />
 
     </LinearLayout>
 

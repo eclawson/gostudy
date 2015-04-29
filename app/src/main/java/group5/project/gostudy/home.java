@@ -11,12 +11,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.view.View;
 
-import group5.project.gostudy.R;
-
 public class home extends Activity {
 
      private ImageButton viewset;
-     private Button newset;
+   //  private Button newset;
      //public static deck stackOfCards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

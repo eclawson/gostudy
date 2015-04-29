@@ -1,19 +1,12 @@
 package group5.project.gostudy;
 
-import android.app.AlertDialog;
-import android.app.ListActivity;
+import android.app.*;
 import android.os.Bundle;
+import java.io.*;
 import android.view.View.OnClickListener;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-
-import group5.project.gostudy.R;
+import android.widget.*;
+import java.util.*;
 
 public class saveDeck extends ListActivity implements OnClickListener
 {
@@ -33,13 +26,29 @@ public class saveDeck extends ListActivity implements OnClickListener
         }
         else
         {
-        	AlertDialog ad = new AlertDialog.Builder(this).create();
-			ad.setMessage("External storage is not mounted on this device. Either insert an external storage FrontAndBack, or dismount your device from your computer.\n\nEven if your device doesn't have expandable memory, it still has a section of storage marked as external. If your device is currently mounted to a PC, however, this app cannot access that section of storage.");
-			ad.show();
+        	AlertDialog error = new AlertDialog.Builder(this).create();
+            error.setMessage("no sd card");
+            error.show();
         }
 	    setListAdapter(new ArrayAdapter<String>(this, R.layout.row ,files));
     }
-    
+    public void onClick(View v)
+    {
+        String fileName = ((EditText)findViewById(R.id.file_name)).getText().toString();
+        File saveFile = new File(getExternalFilesDir(null), fileName);
+        try
+        {
+            FileOutputStream writer = new FileOutputStream(saveFile);
+            writer.write(flashcard.stackOfCards.saveDeck().getBytes());
+        }
+        catch(Exception e)
+        {
+            AlertDialog error = new AlertDialog.Builder(this).create();
+            error.setMessage("no sd card");
+            error.show();
+        }
+        finish();
+    }
     protected void onListItemClick (ListView l, View v, int position, long id)
 	{
 		try
@@ -52,27 +61,9 @@ public class saveDeck extends ListActivity implements OnClickListener
 		}
 		catch(Exception e)
 		{
-			AlertDialog ad = new AlertDialog.Builder(this).create();
-			ad.setMessage(e.getMessage());
-			ad.show();
+
 		}
 	}
     
-    public void onClick(View v)
-    {
-    	String fileName = ((EditText)findViewById(R.id.file_name)).getText().toString();
-    	File saveFile = new File(getExternalFilesDir(null), fileName);
-    	try
-    	{
-    		FileOutputStream writer = new FileOutputStream(saveFile);
-    		writer.write(flashcard.stackOfCards.saveDeck().getBytes());
-    	}
-    	catch(Exception e)
-    	{
-    		AlertDialog ad = new AlertDialog.Builder(this).create();
-			ad.setMessage("External storage is not mounted on this device. Either insert an external storage FrontAndBack, or dismount your device from your computer.\n\nEven if your device doesn't have expandable memory, it still has a section of storage marked as external. If your device is currently mounted to a PC, however, this app cannot access that section of storage.\n\n"+e.getMessage());
-			ad.show();
-    	}
-    	finish();
-    }
+
 }

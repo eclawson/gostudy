@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import group5.project.gostudy.R;
 
 /**
  * Created by chadlawson on 4/19/15.
@@ -26,8 +25,18 @@ public class howto extends Activity implements View.OnClickListener
         setContentView(R.layout.howto);
 
 
-        ((Button)findViewById(R.id.back1)).setOnClickListener(this);
+        ((Button)findViewById(R.id.back1)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewset();
+            }
+        });
 
+    }
+    private void viewset(){
+        Intent intent = new Intent(this, flashcard.class);
+        startActivity(intent);
+        finish();
     }
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -35,24 +44,7 @@ public class howto extends Activity implements View.OnClickListener
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem menu)
-    {
-        Intent loader;
-        switch(menu.getItemId())
-        {
-            case R.id.menu_import: 	loader = new Intent(getBaseContext(), viewDecks.class);
-                startActivity(loader);
-                break;
-            case R.id.menu_create:	loader = new Intent(getBaseContext(), newCards.class);
-                startActivity(loader);
-                break;
-            case R.id.menu_save: 	loader = new Intent(getBaseContext(), saveDeck.class);
-                startActivity(loader);
-                break;
 
-        }
-        return false;
-    }
 
     public void onClick(View v)
     {

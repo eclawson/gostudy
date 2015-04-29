@@ -1,22 +1,19 @@
 package group5.project.gostudy;
 
-public class FrontAndBack
-{
-	private String question;
-	private String answer;
-	
-	public FrontAndBack(String q, String a)
+public class FrontAndBack{
+	private String frontCard, backCard;
+	public FrontAndBack(String frontInfo, String backInfo)
 	{
-		question = q;
-		answer = a;
+		frontCard = frontInfo;
+		backCard = backInfo;
 	}
-	public String getQuestion()
+	public String getFrontCard()
 	{
-		return question;
+		return frontCard;
 	}
 	
-	public String getAnswer()
+	public String getBackCard()
 	{
-		return answer;
+		return backCard;
 	}
 }

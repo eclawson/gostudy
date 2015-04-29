@@ -17,8 +17,8 @@
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="20" >
+        android:layout_height="431dp"
+        android:textColor="#ffff0003">
 
     </ListView>
 
@@ -27,6 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Save" />
+        android:text="Save Deck"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+        android:textColor="#ffff0003" />
 
 </LinearLayout>

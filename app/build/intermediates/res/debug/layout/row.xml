@@ -3,4 +3,4 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="" /><!-- From: file:/Users/chadlawson/Documents/Flashcard/app/src/main/res/layout/row.xml -->
+        android:text="" /><!-- From: file:/Users/chadlawson/Documents/gostudy/app/src/main/res/layout/row.xml -->

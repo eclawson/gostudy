@@ -3,7 +3,6 @@ import java.io.File;
 import java.util.Scanner;
 import java.lang.Exception;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class deck
 {
@@ -16,33 +15,30 @@ public class deck
 		viewedStack = new ArrayList<FrontAndBack>();
 	}
 	
-	public void setStack(File QA)
+	public void setStack(File flashc)
 	{
 		try
 		{
-			Scanner reader = new Scanner(QA);
+			Scanner reader = new Scanner(flashc);
 			
 			while(reader.hasNext())
 			{
 				reviewStack.add(new FrontAndBack(reader.nextLine(), reader.nextLine()));
 			}
 		}
-		//todo: handle specific exceptions
 		catch(Exception e)
 		{
 			
 		}
 	}
 	
-	//remove all cards from both decks
-	
+
 	public void clearStack()
 	{
 		reviewStack = new ArrayList<FrontAndBack>();
 		viewedStack = new ArrayList<FrontAndBack>();
 	}
 	
-	//adds a FrontAndBack to the deck
 	public void addCard(FrontAndBack newFrontAndBack)
 	{
 		reviewStack.add(newFrontAndBack);
@@ -54,12 +50,12 @@ public class deck
 		for(int i = 0; i<reviewStack.size(); i++)
 		{
 			FrontAndBack temp = reviewStack.get(i);
-			cardStack += (temp.getQuestion()+"\n"+temp.getAnswer()+"\n");
+			cardStack += (temp.getFrontCard()+"\n"+temp.getBackCard()+"\n");
 		}
-		for(int i = 0; i<viewedStack.size(); i++)
+		for(int i = 0; i < viewedStack.size(); i++)
 		{
 			FrontAndBack temp = viewedStack.get(i);
-			cardStack += (temp.getQuestion()+"\n"+temp.getAnswer()+"\n");
+			cardStack += (temp.getFrontCard()+"\n"+temp.getBackCard()+"\n");
 		}
 		return cardStack;
 	}
@@ -73,13 +69,6 @@ public class deck
 			reviewStack = viewedStack;
 			viewedStack = new ArrayList<FrontAndBack>();
 			return getCard(random);
-		}
-		else if(random)
-		{
-			Random randy = new Random();
-			FrontAndBack tempFrontAndBack = reviewStack.remove(randy.nextInt(reviewStack.size()));
-			viewedStack.add(tempFrontAndBack);
-			return tempFrontAndBack;
 		}
 		else
 		{
