@@ -15,7 +15,7 @@ public class deck
 		viewedStack = new ArrayList<FrontAndBack>();
 	}
 	
-	public void setStack(File flashc)
+	public void setDeck(File flashc)
 	{
 		try
 		{
