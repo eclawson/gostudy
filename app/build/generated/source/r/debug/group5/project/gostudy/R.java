@@ -27,21 +27,21 @@ public final class R {
         public static final int splashscreen=0x7f020008;
     }
     public static final class id {
-        public static final int add_card_button=0x7f08000a;
-        public static final int answer_input=0x7f080009;
+        public static final int GoBack=0x7f08000b;
+        public static final int addCard=0x7f08000a;
+        public static final int addcards=0x7f08000f;
         public static final int back1=0x7f080005;
-        public static final int back_button=0x7f08000b;
+        public static final int back_user=0x7f080009;
+        public static final int clear=0x7f080012;
         public static final int file_name=0x7f08000c;
-        public static final int hideButton=0x7f080001;
+        public static final int flashcardFB=0x7f080000;
+        public static final int front_user=0x7f080007;
+        public static final int hideButton=0x7f080002;
         public static final int howtobutton=0x7f080003;
-        public static final int menu_clear_stack=0x7f080012;
-        public static final int menu_create=0x7f080010;
-        public static final int menu_import=0x7f08000f;
-        public static final int menu_save=0x7f080011;
         public static final int menu_settings=0x7f08000e;
-        public static final int nextButton=0x7f080002;
-        public static final int questionView=0x7f080000;
-        public static final int question_input=0x7f080007;
+        public static final int nextButton=0x7f080001;
+        public static final int opensets=0x7f080010;
+        public static final int saveNew=0x7f080011;
         public static final int save_button=0x7f08000d;
         public static final int sets=0x7f080004;
         public static final int textView1=0x7f080006;

@@ -33,7 +33,7 @@ public class deck
 	}
 	
 
-	public void clearStack()
+	public void clearArrays()
 	{
 		reviewStack = new ArrayList<FrontAndBack>();
 		viewedStack = new ArrayList<FrontAndBack>();

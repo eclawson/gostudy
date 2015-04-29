@@ -35,8 +35,8 @@ public class flashcard extends Activity implements OnClickListener
 		catch(Exception e)
 		{
 		}
-        flashcard = (TextView)findViewById(R.id.questionView);
-      //  backcard = (TextView)findViewById(R.id.answerView);
+        flashcard = (TextView)findViewById(R.id.flashcardFB);
+      //  backcard = (TextView)findViewById(R.id.flashcardFB);
         nextButton = (Button)findViewById(R.id.nextButton);
         nextButton.setOnClickListener(this);
         //addnew = (Button)findViewById(R.id.addbutton);
@@ -100,23 +100,23 @@ public class flashcard extends Activity implements OnClickListener
 
     public boolean onOptionsItemSelected(MenuItem menu)
     {
-        Intent intent;
+        Intent newIntent;
         switch(menu.getItemId())
         {
-            case R.id.menu_create:
-                intent = new Intent(getBaseContext(), newCards.class);
-                startActivity(intent);
+            case R.id.addcards:
+                newIntent = new Intent(getBaseContext(), newCards.class);
+                startActivity(newIntent);
                 break;
-            case R.id.menu_import:
-                intent = new Intent(getBaseContext(), viewDecks.class);
-                startActivity(intent);
+            case R.id.opensets:
+                newIntent = new Intent(getBaseContext(), viewDecks.class);
+                startActivity(newIntent);
                 break;
-            case R.id.menu_save:
-                intent = new Intent(getBaseContext(), saveDeck.class);
-                startActivity(intent);
+            case R.id.saveNew:
+                newIntent = new Intent(getBaseContext(), saveDeck.class);
+                startActivity(newIntent);
                 break;
-            case R.id.menu_clear_stack:
-                card_Deck.clearStack();
+            case R.id.clear:
+                card_Deck.clearArrays();
                 flashcard.setText("");
                 //backcard.setText("");
                 cardStatus = null;

@@ -18,21 +18,25 @@
 
 
     <EditText
-        android:id="@+id/question_input"
+        android:id="@+id/front_user"
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
         android:layout_height="153dp"
         android:background="@drawable/card2"
         android:layout_weight="7.01"
-        android:text="test"
         android:gravity="top"
-        android:paddingTop="15dp" />
+        android:textCursorDrawable="@null"
+        android:lineSpacingExtra="5dp"
+        android:paddingTop="22dp"
+        android:typeface="monospace"
+        android:textColor="#ff000000" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Back of Card"
+
         android:layout_weight="1"
         android:textColor="#ffff0014"
         android:textSize="30dp"
@@ -41,12 +45,15 @@
 
 
     <EditText
-        android:id="@+id/answer_input"
+        android:id="@+id/back_user"
+        android:lineSpacingExtra="5dp"
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:text=""
-        android:background="@drawable/card2"/>
+        android:background="@drawable/card2"
+        android:typeface="monospace"
+        android:gravity="top"
+        android:paddingTop="22dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +61,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/add_card_button"
+            android:id="@+id/addCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Card" 
@@ -64,7 +71,7 @@
             android:shadowColor="#ffff0008" />
 
         <Button
-            android:id="@+id/back_button"
+            android:id="@+id/GoBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"

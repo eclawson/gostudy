@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class newCards extends Activity implements OnClickListener
 {
-	TextView question_input;
-	TextView answer_input;
+	TextView frontOfCard;
+	TextView backOfCard;
 
     @Override
     public void onCreate(Bundle savedInstanceState) 
@@ -23,10 +23,10 @@ public class newCards extends Activity implements OnClickListener
         setContentView(R.layout.newcards);
         
 
-    	((Button)findViewById(R.id.add_card_button)).setOnClickListener(this);
-    	((Button)findViewById(R.id.back_button)).setOnClickListener(this);
-    	question_input = (TextView)findViewById(R.id.question_input);
-    	answer_input = (TextView)findViewById(R.id.answer_input);
+    	((Button)findViewById(R.id.addCard)).setOnClickListener(this);
+    	((Button)findViewById(R.id.GoBack)).setOnClickListener(this);
+    	frontOfCard = (TextView)findViewById(R.id.front_user);
+    	backOfCard = (TextView)findViewById(R.id.back_user);
     }
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -39,13 +39,13 @@ public class newCards extends Activity implements OnClickListener
         Intent loader;
         switch(menu.getItemId())
         {
-            case R.id.menu_import: 	loader = new Intent(getBaseContext(), viewDecks.class);
+            case R.id.opensets: 	loader = new Intent(getBaseContext(), viewDecks.class);
                 startActivity(loader);
                 break;
-            case R.id.menu_create:	loader = new Intent(getBaseContext(), newCards.class);
+            case R.id.addcards:	loader = new Intent(getBaseContext(), newCards.class);
                 startActivity(loader);
                 break;
-            case R.id.menu_save: 	loader = new Intent(getBaseContext(), saveDeck.class);
+            case R.id.saveNew: 	loader = new Intent(getBaseContext(), saveDeck.class);
                 startActivity(loader);
                 break;
 
@@ -57,15 +57,15 @@ public class newCards extends Activity implements OnClickListener
     {
     	switch(v.getId())
     	{
-    		case R.id.add_card_button:
-    			if(!question_input.getText().toString().equals("") && !answer_input.getText().toString().equals(""))
+    		case R.id.addCard:
+    			if(!frontOfCard.getText().toString().equals("") && !backOfCard.getText().toString().equals(""))
     			{
-    				flashcard.card_Deck.addCard(new FrontAndBack(question_input.getText().toString(), answer_input.getText().toString()));
-    				question_input.setText("");
-    				answer_input.setText("");
+    				flashcard.card_Deck.addCard(new FrontAndBack(frontOfCard.getText().toString(), backOfCard.getText().toString()));
+    				frontOfCard.setText("");
+    				backOfCard.setText("");
     			}
     			break;
-    		case R.id.back_button:
+    		case R.id.GoBack:
                 finish();
                 break;
     	}
