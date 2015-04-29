@@ -36,7 +36,7 @@ public class viewDecks extends ListActivity
 			File[] fileList = rootFile.listFiles();
 			if(!fileList[position].getName().equals(".nomedia"))
 			{
-				flashcard.stackOfCards.setStack(fileList[position]);
+				flashcard.card_Deck.setStack(fileList[position]);
 			}
 		}
 		catch(Exception e)

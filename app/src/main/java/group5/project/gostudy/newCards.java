@@ -60,7 +60,7 @@ public class newCards extends Activity implements OnClickListener
     		case R.id.add_card_button:
     			if(!question_input.getText().toString().equals("") && !answer_input.getText().toString().equals(""))
     			{
-    				flashcard.stackOfCards.addCard(new FrontAndBack(question_input.getText().toString(), answer_input.getText().toString()));
+    				flashcard.card_Deck.addCard(new FrontAndBack(question_input.getText().toString(), answer_input.getText().toString()));
     				question_input.setText("");
     				answer_input.setText("");
     			}

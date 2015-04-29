@@ -15,12 +15,12 @@ public class home extends Activity {
 
      private ImageButton viewset;
    //  private Button newset;
-     //public static deck stackOfCards;
+     //public static deck card_Deck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-       // stackOfCards = new deck();
+       // card_Deck = new deck();
         //Intent loader;
 
         viewset = (ImageButton) findViewById(R.id.sets);

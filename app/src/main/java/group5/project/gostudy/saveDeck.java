@@ -39,7 +39,7 @@ public class saveDeck extends ListActivity implements OnClickListener
         try
         {
             FileOutputStream writer = new FileOutputStream(saveFile);
-            writer.write(flashcard.stackOfCards.saveDeck().getBytes());
+            writer.write(flashcard.card_Deck.saveDeck().getBytes());
         }
         catch(Exception e)
         {

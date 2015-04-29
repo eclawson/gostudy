@@ -16,14 +16,14 @@ public class flashcard extends Activity implements OnClickListener
 	Button hideOrShowButton;
     Button howtobut;
 
-	public static deck stackOfCards;
+	public static deck card_Deck;
 	private FrontAndBack cardStatus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
     	
-    	stackOfCards = new deck();
+    	card_Deck = new deck();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flashcardscreen);
         try
@@ -66,7 +66,7 @@ public class flashcard extends Activity implements OnClickListener
 
     	{
     		case R.id.nextButton: 
-    			cardStatus = stackOfCards.getCard(true);
+    			cardStatus = card_Deck.getCard(true);
     			if(cardStatus !=null)
     			{
     				flashcard.setText(cardStatus.getFrontCard());
@@ -116,7 +116,7 @@ public class flashcard extends Activity implements OnClickListener
                 startActivity(intent);
                 break;
             case R.id.menu_clear_stack:
-                stackOfCards.clearStack();
+                card_Deck.clearStack();
                 flashcard.setText("");
                 //backcard.setText("");
                 cardStatus = null;
