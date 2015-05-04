@@ -1,7 +1,6 @@
 package group5.project.gostudy;
 
 /**
- * Created by chadlawson on 4/18/15.
  */
 
 import android.os.Bundle;
@@ -15,7 +14,6 @@ public class home extends Activity {
 
      private ImageButton viewset;
    //  private Button newset;
-     //public static deck card_Deck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

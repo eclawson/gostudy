@@ -19,16 +19,13 @@ public class deck
 	{
 		try
 		{
-			Scanner reader = new Scanner(flashc);
-			
-			while(reader.hasNext())
-			{
-				reviewStack.add(new FrontAndBack(reader.nextLine(), reader.nextLine()));
+			Scanner scan1 = new Scanner(flashc);
+			while(scan1.hasNext()){
+				reviewStack.add(new FrontAndBack(scan1.nextLine(), scan1.nextLine()));
 			}
 		}
 		catch(Exception e)
 		{
-			
 		}
 	}
 	
@@ -47,31 +44,26 @@ public class deck
 	public String saveDeck()
 	{
 		String cardStack = new String();
-		for(int i = 0; i<reviewStack.size(); i++)
-		{
+		for(int i = 0; i<reviewStack.size(); i++){
 			FrontAndBack temp = reviewStack.get(i);
 			cardStack += (temp.getFrontCard()+"\n"+temp.getBackCard()+"\n");
 		}
-		for(int i = 0; i < viewedStack.size(); i++)
-		{
+		for(int i = 0; i < viewedStack.size(); i++){
 			FrontAndBack temp = viewedStack.get(i);
 			cardStack += (temp.getFrontCard()+"\n"+temp.getBackCard()+"\n");
 		}
 		return cardStack;
 	}
 	
-	public FrontAndBack getCard(boolean random)
-	{
-		if(reviewStack.size()==0)
-		{
+	public FrontAndBack getCard(boolean rnd){
+		if(reviewStack.size()==0){
 			if(viewedStack.size() == 0)
 				return null;
 			reviewStack = viewedStack;
 			viewedStack = new ArrayList<FrontAndBack>();
-			return getCard(random);
+			return getCard(rnd);
 		}
-		else
-		{
+		else{
 			FrontAndBack tempFrontAndBack = reviewStack.remove(0);
 			viewedStack.add(tempFrontAndBack);
 			return tempFrontAndBack;

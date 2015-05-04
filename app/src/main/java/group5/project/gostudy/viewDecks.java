@@ -29,14 +29,14 @@ public class viewDecks extends ListActivity
 
 	    setListAdapter(new ArrayAdapter<String>(this, R.layout.row ,files));
 	}
-	protected void onListItemClick (ListView l, View v, int position, long id)
+	protected void onListItemClick (ListView l, View v, int i, long id)
 	{
 		try
 		{
 			File[] fileList = rootFile.listFiles();
-			if(!fileList[position].getName().equals(".nomedia"))
+			if(!fileList[i].getName().equals(".nomedia"))
 			{
-				flashcard.card_Deck.setDeck(fileList[position]);
+				flashcard.card_Deck.setDeck(fileList[i]);
 			}
 		}
 		catch(Exception e)

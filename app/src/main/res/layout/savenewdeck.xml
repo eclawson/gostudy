@@ -7,17 +7,18 @@
     >
 
     <EditText
-        android:id="@+id/file_name"
+        android:id="@+id/newName"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:text="" />
+        android:layout_height="75dp" />
 
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="374dp"
-        android:textColor="#ffff0003">
+        android:textColor="#ffff0003"
+        android:textSize="20dp">
+
 
     </ListView>
 

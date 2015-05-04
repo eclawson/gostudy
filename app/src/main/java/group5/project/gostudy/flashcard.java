@@ -28,15 +28,14 @@ public class flashcard extends Activity implements OnClickListener
         setContentView(R.layout.flashcardscreen);
         try
 		{
-			FileOutputStream nomedia = new FileOutputStream(new File(getExternalFilesDir(null), ".nomedia"));
-			nomedia.write('a');
-			nomedia.close();
+			FileOutputStream filewrite = new FileOutputStream(new File(getExternalFilesDir(null), ".nomedia"));
+			filewrite.write('a');
+			filewrite.close();
 		}
 		catch(Exception e)
 		{
 		}
         flashcard = (TextView)findViewById(R.id.flashcardFB);
-      //  backcard = (TextView)findViewById(R.id.flashcardFB);
         nextButton = (Button)findViewById(R.id.nextButton);
         nextButton.setOnClickListener(this);
         //addnew = (Button)findViewById(R.id.addbutton);
@@ -48,7 +47,7 @@ public class flashcard extends Activity implements OnClickListener
             }
         });
 
-        flipButton = (Button)findViewById(R.id.hideButton);
+        flipButton = (Button)findViewById(R.id.flip);
         flipButton.setOnClickListener(this);
         
     }
@@ -58,8 +57,6 @@ public class flashcard extends Activity implements OnClickListener
         finish();
     }
 
-
-    
     public void onClick(View v)
     {
     	switch(v.getId())
@@ -117,8 +114,7 @@ public class flashcard extends Activity implements OnClickListener
                 break;
             case R.id.clear:
                 card_Deck.clearArrays();
-                flashcard.setText("");
-                //backcard.setText("");
+                flashcard.setText("Go to settings to load or create new deck/cards!");
                 cardStatus = null;
                 break;
         }

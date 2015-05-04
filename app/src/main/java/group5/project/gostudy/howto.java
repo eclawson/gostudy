@@ -20,11 +20,8 @@ public class howto extends Activity implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.howto);
-
-
         ((Button)findViewById(R.id.back1)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,14 +35,12 @@ public class howto extends Activity implements View.OnClickListener
         startActivity(intent);
         finish();
     }
-    public boolean onCreateOptionsMenu(Menu menu)
+   /* public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.flashmenu, menu);
         return true;
     }
-
-
-
+*/
     public void onClick(View v)
     {
         switch(v.getId())

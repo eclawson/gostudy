@@ -16,13 +16,9 @@ public class newCards extends Activity implements OnClickListener
 	TextView backOfCard;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) 
-    {
-
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newcards);
-        
-
     	((Button)findViewById(R.id.addCard)).setOnClickListener(this);
     	((Button)findViewById(R.id.GoBack)).setOnClickListener(this);
     	frontOfCard = (TextView)findViewById(R.id.front_user);

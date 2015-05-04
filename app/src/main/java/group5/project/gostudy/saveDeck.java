@@ -32,14 +32,28 @@ public class saveDeck extends ListActivity implements OnClickListener
         }
 	    setListAdapter(new ArrayAdapter<String>(this, R.layout.row ,files));
     }
-    public void onClick(View v)
+    protected void onListItemClick (ListView l, View v, int i, long id)
     {
-        String fileName = ((EditText)findViewById(R.id.file_name)).getText().toString();
-        File saveFile = new File(getExternalFilesDir(null), fileName);
         try
         {
-            FileOutputStream writer = new FileOutputStream(saveFile);
-            writer.write(flashcard.card_Deck.saveDeck().getBytes());
+            File[] decklist = getExternalFilesDir(null).listFiles();
+            if(!decklist[i].getName().equals(".nomedia"))
+            {
+                ((EditText)findViewById(R.id.newName)).setText(decklist[i].getName());
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+    public void onClick(View v)
+    {
+        String newfile = ((EditText)findViewById(R.id.newName)).getText().toString();
+        File save = new File(getExternalFilesDir(null), newfile);
+        try
+        {
+            FileOutputStream fileSave = new FileOutputStream(save);
+            fileSave.write(flashcard.card_Deck.saveDeck().getBytes());
         }
         catch(Exception e)
         {
@@ -49,21 +63,7 @@ public class saveDeck extends ListActivity implements OnClickListener
         }
         finish();
     }
-    protected void onListItemClick (ListView l, View v, int position, long id)
-	{
-		try
-		{
-			File[] fileList = getExternalFilesDir(null).listFiles();
-			if(!fileList[position].getName().equals(".nomedia"))
-			{
-				((EditText)findViewById(R.id.file_name)).setText(fileList[position].getName());
-			}
-		}
-		catch(Exception e)
-		{
 
-		}
-	}
     
 
 }

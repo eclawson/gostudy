@@ -33,12 +33,12 @@ public final class R {
         public static final int back1=0x7f080005;
         public static final int back_user=0x7f080009;
         public static final int clear=0x7f080012;
-        public static final int file_name=0x7f08000c;
         public static final int flashcardFB=0x7f080000;
+        public static final int flip=0x7f080002;
         public static final int front_user=0x7f080007;
-        public static final int hideButton=0x7f080002;
         public static final int howtobutton=0x7f080003;
         public static final int menu_settings=0x7f08000e;
+        public static final int newName=0x7f08000c;
         public static final int nextButton=0x7f080001;
         public static final int opensets=0x7f080010;
         public static final int saveNew=0x7f080011;
